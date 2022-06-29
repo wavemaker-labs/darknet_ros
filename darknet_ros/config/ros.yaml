@@ -4,6 +4,10 @@ subscribers:
     topic: /camera/color/image_raw
     queue_size: 1
 
+  depth_cam_info:
+    topic: /camera/aligned_depth_to_color/camera_info
+    queue_size: 1
+  
 actions:
 
   camera_reading:
@@ -25,6 +29,17 @@ publishers:
     topic: /darknet_ros/detection_image
     queue_size: 1
     latch: true
+
+  object_depth:
+    topic: /object_depth/scene_depth_info
+    queue_size: 1
+    latch: true
+
+  detection_depth_image:
+    topic: /object_depth/detection_depth_image
+    queue_size: 1
+    latch: true
+
 
 image_view:
 
